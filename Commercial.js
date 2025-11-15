@@ -140,19 +140,18 @@ all[0].addEventListener('click', () => {
 
 
 //simple API 
-fetch("https://jsonplaceholder.typicode.com/posts",
-{
-    method: 'POST',
-    body : JSON.stringify({
-    title :'wait for API to respond ',
-        body: 'test API',
-        userId : 1
-    }),
-    headers: {
-        'Content-type' : 'application/json; charset=utf-8',
+//fetch("https://jsonplaceholder.typicode.com/posts",
+//{   method: 'POST',
+   // body : JSON.stringify({
+//  title :'wait for API to respond ',
+     //   body: 'test API',
+       // userId : 1
+  //  }),
+  //  headers: {
+      //  'Content-type' : 'application/json; charset=utf-8',
         
-    }
-}
-)
+    //}
+//}
+//)
 //.then(response => response.json());
 //.then(json=> console.log(json));
