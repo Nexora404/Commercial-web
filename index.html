@@ -5,14 +5,15 @@
   <title>commercial</title>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <title>Hello, World!</title>
-  <link rel="stylesheet" href="commercial.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
 
 <body>
   <nav>
     <li class="navigation">
-      <a class="nav-item" href="commercial.html">home</a>
+      <a class="nav-item" href="index.html">home</a>
       <a class="nav-item" href="oders.html">oders</a>
       <a class="nav-item" href="support.html">support</a>
       <a class="nav-item" href="account.html">account</a>
@@ -20,17 +21,21 @@
   </nav>
   
   <i class="fas fa-tablet "></i>
-  <h2 id="tittle">CONNER STORE</h2>
+  <h2 id="tittle" class="slide">CONNER STORE</h2>
     
 </head>
-  <input type="text" id="search" onkeyup="searchphone()" placeholder="search your phone ......">
+  <input type="text" class="pop" id="search" onkeyup="searchphone()" placeholder="search your phone ......">
   <p id="noresults"> no results founds ...</p>
+  <p style=" 
+  color: blueviolet;"> Time left till offer ends </p>
+  <div id="countdown"></div>
   <main>
-    <div id="iphone" class="phone-card">
-    <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hi-Tech-PNG/Black_Phone_Transparent_PNG_Clip_Art_Image.png?m=1629832419"
+    <div id="iphone" class="phone-card">od
+    Phone: I-phone 16
+    <img src="iphone.jpg"
      alt="Phone Image"
-     width="50">
-      <h3>I-phone16</h3>
+     width="300">
+      <h3>I-phone17</h3>
       <p><b>price:ksh 145,000</b>
         <br>
         RAM 16GB
@@ -52,9 +57,9 @@
       <button id="iphonebtn" onclick="buy('iphone')"> purchase</button>
     </div>
     <div id="samsung" class="phone-card">
-      <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hi-Tech-PNG/Black_Phone_Transparent_PNG_Clip_Art_Image.png?m=1629832419"
+      <img src="samsung.jpg"
      alt="Phone Image"
-     width="50">
+     width="300">
       <p>
         <h3>
         Samsung s25 ultra
@@ -79,9 +84,9 @@
     </div>
     
     <div id="tecno" class="phone-card">
-      <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hi-Tech-PNG/Black_Phone_Transparent_PNG_Clip_Art_Image.png?m=1629832419"
+      <img src="tecnojpg.jpg"
      alt="Phone Image"
-     width="50">
+     width="300">
       <p>
         <h3>
         Techno camon 40
@@ -106,9 +111,9 @@
     </div>
     
     <div id="infinix" class="phone-card">
-      <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hi-Tech-PNG/Black_Phone_Transparent_PNG_Clip_Art_Image.png?m=1629832419"
+      <img src="infinix.jpg"
      alt="Phone Image"
-     width="50">
+     width="300">
       <p>
         <h3>
         Infinix hot 50
@@ -133,8 +138,8 @@
      </div>
       <div id="oppo" class="phone-card">
         
-  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hi-Tech-PNG/Black_Phone_Transparent_PNG_Clip_Art_Image.png?m=1629832419"
-   alt="Phone Image" width="50">
+  <img src="oppo.jpg"
+   alt="Phone Image" width="300">
   <p>
     <h3>Oppo Find X7</h3>
     <b>price :ksh 80,000</b><br>
@@ -154,8 +159,8 @@
 
     </div>
     <div id="oneplus" class="phone-card">
-  <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hi-Tech-PNG/Black_Phone_Transparent_PNG_Clip_Art_Image.png?m=1629832419"
-   alt="Phone Image" width="50">
+  <img src="onepllus.jpg"
+   alt="Phone Image" width="300">
   <h3>OnePlus 12 Pro</h3>
   <p>
     <b>Price: Ksh 95,000</b><br>
@@ -174,7 +179,8 @@
   <button id="oneplusbtn" onclick="buy('oneplus')">Purchase</button>
 </div>
   </main>
-  <form  id="oder-form"  onsubmit="return validateform(event)" action="#" method="POST">
+  <form  id="oder-form"  onsubmit="return validateform(event)" action="oders.html"
+  target="_blank" method="GET">
     
     <button id="cancel" onclick="closeform()">x</button>
     <h3 id="paymthd"> Payment method</h3>
@@ -201,24 +207,112 @@
         </button>
     </label>
     </form>
-  
-  <div id="con8f"> 
-    <h3 id="cmd"> Confim order </h3>
-    <label for="conf-number"> Account number 
-    <input type="number" id="conf-number" readonly="">
-      </label>
-    <br>
-    <label for="phone-type" >Phone type
-      <input type="text" id="phone-type" readonly="">
-      
-    </label>
-    <label for="conf-price"> price:
-      <input type="number" id="phone-price" readonly=""> 
-    </label>
-    <button type="submit" id="conf-purchase" onclick="submitpay()">
-      Complete 
-    </button>
+  <div id="countdown">
+
   </div>
+
+ 
+  <script>
+    
+  </script>
+
+
 </body>
-<script src="commercial.js"></script>
+  <script>
+    function searchphone() {
+    let input = document.getElementById('search').value.toLowerCase();
+    let phones = document.getElementsByClassName("phone-card");
+    let found = 0;
+    
+    for (let i = 0 ; i<phones.length; i++) {
+        let name = phones[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+        if (name.includes(input)) {
+            phones[i].style.display = "block";
+            found++;
+        } else {
+            phones[i].style.display = "none";
+        }
+    }
+    if (found === 0 ) {
+        document.getElementById('noresults').style.display = "block";
+        found++;
+        
+    } else {
+        document.getElementById("noresults").style.display = "none";
+    }
+}
+
+// oder button
+function buy(phone) {
+    document.getElementById('oder-form').style.display = "grid";
+    const form = document.getElementById('oder-form');
+    form.classList.add('showform');
+    
+    //change prices per phone 
+    let selectedphone = "";
+    let selectedprice = 0;
+    switch (phone) {
+        case "iphone":
+           selectedphone = "I-phone 16"
+            selectedprice = 145000;
+            break ;
+        case "samsung":
+             selectedphone = "samsung s25 ultra";
+             selectedprice = 100000;
+             break;
+        case "techno":
+             selectedphone = "Tecno camon 40 ";
+             selectedprice = 100000;
+             break;
+        case "infinix":
+             selectedphone = "infinix hot 50";
+             selectedprice = 100000;
+             break;
+        case "oppo":
+             selectedphone = "oppo find X7";
+             selectedprice = 800000;
+             break;
+        case "oneplus":
+             selectedphone = " one plus 12pro";
+             selectedprice = 95000;
+             break;
+        default :
+             selectedphone = "unknown";
+             selectedprice = 0;
+             break;
+        
+        
+    }
+    
+document.getElementById('formprice').textContent = "Price: Ksh " + selectedprice;
+document.getElementById('formphone').textContent = "Phone: " + selectedphone;
+}
+//dropdown price change 
+
+
+
+//hide 
+function closeform() {
+    document.getElementById("oder-form").style.display = "none";
+    
+}
+function validateform(e){
+    
+    const accnumber = document.getElementById('number').value;
+    const  cmf = document.getElementById('conf');
+    
+    if (accnumber.length === 10 ) {
+        alert('paymt'+ {accnumber});
+       // document.getElementById('conf').style.display = "flex";
+        return true;
+        
+    } else {
+        alert('th');
+        return false;
+        
+    }
+    
+}
+  </script>
+<script src="script.js"  ></script>
 </html>
