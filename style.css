@@ -113,7 +113,7 @@ main {
   height: 50%;
   padding: 40px ;
   margin: 0 auto ;
-  display:  none;
+
   border-radius: 16px;
   align-items: center;
   justify-content: center;
@@ -587,4 +587,5 @@ footer a {
 .buybtn:hover {
     background-color: darkviolet; /* hover effect */
 }
+
 
