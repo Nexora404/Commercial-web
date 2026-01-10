@@ -114,6 +114,8 @@ main {
 #oder-form {
   background: linear-gradient(12deg, orange, #7bff00);
   display: none;
+  margin-left: 15%;
+  margin-right:15px;
   flex-direction: row ;
   width: 60%;
   height: 50%;
@@ -593,6 +595,7 @@ footer a {
 .buybtn:hover {
     background-color: darkviolet; /* hover effect */
 }
+
 
 
 
