@@ -129,7 +129,7 @@ main {
 
   transform: translate( -50% -50%);
   position : fixed ; 
-  top: 25%;
+  top: 25%; left 25%;
   
   
   box-shadow: 0 0 25px rgba(225, 0, 0, 0.8),
@@ -597,6 +597,7 @@ footer a {
 .buybtn:hover {
     background-color: darkviolet; /* hover effect */
 }
+
 
 
 
