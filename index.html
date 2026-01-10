@@ -457,7 +457,7 @@ async function buy(productId) {
     form.classList.add('showform');
 
     try {
-        const res = await fetch('http://localhost:5000/api/products');
+        const res = await fetch('https://backend-uobz.onrender.com/api/products');
         const products = await res.json();
         const product = products.find(p => p.id === productId);
 
@@ -523,4 +523,5 @@ function validateform(){
   </script>
 <script src="script.js"  ></script>
 </html>
+
 
