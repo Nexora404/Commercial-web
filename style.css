@@ -105,6 +105,12 @@ main {
   color: red;
   display: none;
 }
+  .form-wrapper {
+    display : flex;
+    justify-content : center ;
+    align-items : center ;
+    height : 100vh ;
+  }
 #oder-form {
   background: linear-gradient(12deg, orange, #7bff00);
   display: none;
@@ -587,5 +593,6 @@ footer a {
 .buybtn:hover {
     background-color: darkviolet; /* hover effect */
 }
+
 
 
